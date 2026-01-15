@@ -1,0 +1,38 @@
+version: '3.9'
+
+services:
+
+  api:
+    image: registry.gitlab.com/devhub-uz/devhub.registry/ravm-api:${APPLICATION_VERSION}
+    env_file:
+    - ./env/base.env
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=${DB_HOST};Database=Ramv;Port=5432;User Id=postgres;Password=${DB_PASSWORD};
+    extra_hosts:
+      - "localhost:host-gateway"
+    networks:
+      - ravm_network
+    # swarm
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        order: start-first
+        failure_action: rollback
+        delay: 10s
+      rollback_config:
+        parallelism: 0
+        order: stop-first
+      restart_policy:
+        condition: any
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    healthcheck:
+      test: curl -sS http://ravm_api/health/ready || echo 1
+      interval: 30s
+      timeout: 3s
+      retries: 12
+
+networks:
+  ravm_network:

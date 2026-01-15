@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ClosedXML" />
+    <PackageReference Include="FreeSpire.Doc" /> <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="QRCoder-ImageSharp" />
+    <PackageReference Include="Swashbuckle.AspNetCore" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\Localization\Devhub.Localization.FluentValidation\Devhub.Localization.FluentValidation.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\Paging\Uds.Common.Paging\Devhub.Common.Paging.csproj" />
+    <ProjectReference Include="..\Ravm.Application\Ravm.Application.csproj" />
+    <ProjectReference Include="..\Ravm.Domain\Ravm.Domain.csproj" />
+    <ProjectReference Include="..\Ravm.Infrastructure\Ravm.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="App_Data\Certificates\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="App_Data\Templates\waybill_certificate.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

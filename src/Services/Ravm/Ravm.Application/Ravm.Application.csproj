@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" />
+    <PackageReference Include="FluentValidation.AspNetCore" />
+    <PackageReference Include="MediatR" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" />
+    <PackageReference Include="EntityFrameworkCore.Exceptions.PostgreSQL" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\Paging\Uds.Common.Paging.AutoMapper\Devhub.Common.Paging.AutoMapper.csproj" />
+    <ProjectReference Include="..\Ravm.Domain\Ravm.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="UseCases\Permissions\Commands\" />
+    <Folder Include="UseCases\Permissions\Models\" />
+    <Folder Include="UseCases\Permissions\Queries\" />
+    <Folder Include="UseCases\Permissions\Validators\" />
+    <Folder Include="UseCases\Reports\Drivers\Validators\" />
+    <Folder Include="UseCases\Roles\Queries\" />
+  </ItemGroup>
+
+</Project>

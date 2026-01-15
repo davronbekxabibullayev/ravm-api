@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+
+	<PropertyGroup>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<Company>D.X.Xabibullayev</Company>
+		<Copyright>Copyright D.X.Xabibullayev 2024</Copyright>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+		<InvariantGlobalization>false</InvariantGlobalization>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+	</PropertyGroup>
+
+</Project>
