@@ -12,6 +12,12 @@ using static Ravm.Infrastructure.Common.Constants.Permissions;
 
 public class InitialRolesUserSeed
 {
+    private static readonly Action<ILogger, string, Exception?> MigrationError =
+    LoggerMessage.Define<string>(
+        LogLevel.Error,
+        new EventId(1001, "MigrationError"),
+        "EXCEPTION ERROR while migrating {Message}");
+
     public async Task SeedAsync(AppDbContext context, IServiceProvider services, int retry = 0)
     {
         var executionStrategy = context.Database.CreateExecutionStrategy();
@@ -52,7 +58,7 @@ public class InitialRolesUserSeed
         catch (Exception ex)
         {
             await transaction.RollbackAsync();
-            logger.LogError(ex, "EXCEPTION ERROR while migrating {DbContextName}", nameof(AppDbContext));
+            MigrationError(logger, ex.Message, ex);
 
             if (retry >= 3)
                 throw;
@@ -133,13 +139,14 @@ public class InitialRolesUserSeed
             EmailConfirmed = true,
             PhoneNumberConfirmed = false,
             UserName = "admin",
-            Email = "bepro@info.uz",
+            Email = "davronbekxabibullayev03.06.88@gmail.com",
             NormalizedUserName = "ADMIN",
-            NormalizedEmail = "BEPRO@INFO.UZ",
+            NormalizedEmail = "DAVRONBEKXABIBULLAYEV03.06.88@GMAIL.COM",
             SecurityStamp = Guid.NewGuid().ToString("D"),
             ConcurrencyStamp = "fcd781ef-affc-4020-ab02-f636b3db4c23",
             OrganizationId = Guid.Parse("6B34439F-4FAE-450E-93A2-16A280C2BF31"),
-            EmployeeId = Guid.Parse("745F5930-49A7-4191-B64D-65719AFD7239")
+            EmployeeId = Guid.Parse("745F5930-49A7-4191-B64D-65719AFD7239"),
+            PhoneNumber = "998990510014"
         };
 
         adminUser.PasswordHash = passwordHasher.HashPassword(adminUser, "123456Test$");
