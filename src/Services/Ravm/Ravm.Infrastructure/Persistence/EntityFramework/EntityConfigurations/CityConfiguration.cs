@@ -2,7 +2,7 @@ namespace Uds.Common.Infrastructure.EntityFramework.EntityConfigurations;
 
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Ravm.Domain.Models;
-using Ravm.Infrastructure.Persistence.EntityFramework.Common;
+using Ravm.Infrastructure.Persistence.EntityFramework.EntityConfigurations.Common;
 
 public class CityConfiguration : LocalizableEntityConfiguration<City>
 {

@@ -67,7 +67,7 @@ public class WordprocessingWorker
 
     public void Close()
     {
-        _document.Close();
+        _document.Dispose();
     }
 
 

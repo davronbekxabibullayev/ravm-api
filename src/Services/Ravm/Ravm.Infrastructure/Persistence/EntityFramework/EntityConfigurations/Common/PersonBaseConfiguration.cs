@@ -1,4 +1,4 @@
-namespace Ravm.Infrastructure.Persistence.EntityFramework.Common;
+namespace Ravm.Infrastructure.Persistence.EntityFramework.EntityConfigurations.Common;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;

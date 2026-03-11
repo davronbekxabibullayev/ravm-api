@@ -9,5 +9,5 @@ dotnet ef migrations add "SampleMigration" --project Services\Ravm\Ravm.Infrastr
 
 Package-Mananger Console
 ```
-Add-Migration InitalMigration -Project Ravm.Infrastructure -OutputDir Persistance\EntityFramework\Migrations
+Add-Migration InitalMigration -Project Ravm.Infrastructure -OutputDir Persistence\EntityFramework\Migrations
 ```

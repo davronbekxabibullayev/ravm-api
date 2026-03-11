@@ -2,7 +2,7 @@ namespace Ravm.Infrastructure.Persistence.EntityFramework.EntityConfigurations;
 
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Ravm.Domain.Models;
-using Ravm.Infrastructure.Persistence.EntityFramework.Common;
+using Ravm.Infrastructure.Persistence.EntityFramework.EntityConfigurations.Common;
 
 public class VehicleModelConfiguration : LocalizableEntityConfiguration<VehicleModel>
 {
